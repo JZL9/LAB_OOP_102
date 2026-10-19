@@ -1,5 +1,16 @@
-from employees import FullTimeEmployee
+from employees import  Employee,FullTimeEmployee, PartTimeEmployee
 
 ahmed = FullTimeEmployee("Ahmed", 101, 8000)
-ahmed.display_info()
-print(ahmed.calculate_salary())
+sara = PartTimeEmployee("Sara", 102, 80, 50)
+khalid = FullTimeEmployee("Khalid", 103, 12000)
+
+employees = [ahmed, sara, khalid]  
+
+total = 0
+
+for emp in employees:
+    salary = emp.calculate_salary()
+    print(f"Employee: {emp.name} {emp.get_employee_id()}: {salary} SAR")
+    total += salary
+
+print(f"Total Salaries: {total} SAR")
